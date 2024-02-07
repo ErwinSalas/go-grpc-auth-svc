@@ -8,9 +8,9 @@ import (
 	"github.com/ErwinSalas/go-grpc-auth-svc/pkg/auth"
 	"github.com/ErwinSalas/go-grpc-auth-svc/pkg/config"
 	"github.com/ErwinSalas/go-grpc-auth-svc/pkg/database"
-	authpb "github.com/ErwinSalas/go-grpc-auth-svc/pkg/proto"
 	"github.com/ErwinSalas/go-grpc-auth-svc/pkg/server"
 	"github.com/ErwinSalas/go-grpc-auth-svc/pkg/utils"
+	authpb "github.com/ErwinSalas/go-grpc-auth-svc/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )

@@ -2,10 +2,10 @@ module github.com/ErwinSalas/go-grpc-auth-svc
 
 go 1.21.4
 
-replace github.com/ErwinSalas/go-grpc-auth-svc/pkg/proto => ./pkg/proto
+replace github.com/ErwinSalas/go-grpc-auth-svc/proto => ./pkg/proto
 
 require (
-	github.com/ErwinSalas/go-grpc-auth-svc/pkg/proto v0.0.0-00010101000000-000000000000
+	github.com/ErwinSalas/go-grpc-auth-svc/proto v0.0.0-00010101000000-000000000000
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/spf13/viper v1.18.2
 	golang.org/x/crypto v0.18.0
@@ -15,6 +15,7 @@ require (
 )
 
 require (
+	github.com/ErwinSalas/go-grpc-product-svc/proto v0.0.0-20240207065649-befa435a3cfd // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect

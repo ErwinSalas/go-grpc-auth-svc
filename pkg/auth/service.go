@@ -5,8 +5,8 @@ import (
 	"net/http"
 
 	"github.com/ErwinSalas/go-grpc-auth-svc/pkg/models"
-	authpb "github.com/ErwinSalas/go-grpc-auth-svc/pkg/proto"
 	"github.com/ErwinSalas/go-grpc-auth-svc/pkg/utils"
+	authpb "github.com/ErwinSalas/go-grpc-auth-svc/proto"
 )
 
 type AuthService interface {

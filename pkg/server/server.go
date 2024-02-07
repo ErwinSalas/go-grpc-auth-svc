@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"github.com/ErwinSalas/go-grpc-auth-svc/pkg/auth"
-	authpb "github.com/ErwinSalas/go-grpc-auth-svc/pkg/proto"
+	authpb "github.com/ErwinSalas/go-grpc-auth-svc/proto"
 )
 
 type AuthServer struct {
