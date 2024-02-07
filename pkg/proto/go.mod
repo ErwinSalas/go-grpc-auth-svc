@@ -1,4 +1,4 @@
-module github.com/ErwinSalas/go-grpc-auth-svc/proto
+module github.com/ErwinSalas/go-grpc-auth-svc/pkg/proto
 
 go 1.21.4
 

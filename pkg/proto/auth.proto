@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/ErwinSalas/go-grpc-auth-svc/proto;authpb";
+option go_package = "github.com/ErwinSalas/go-grpc-auth-svc/pkg/proto;authpb";
 
 package proto;
 
