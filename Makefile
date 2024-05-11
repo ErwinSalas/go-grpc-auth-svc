@@ -3,3 +3,6 @@ proto:
 
 server:
 	go run cmd/main.go
+
+cert:
+	sh cert/gen.sh  
