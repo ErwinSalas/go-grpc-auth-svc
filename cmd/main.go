@@ -1,7 +1,6 @@
 package main
 
 import (
-	"crypto/tls"
 	"fmt"
 	"log"
 	"net"
@@ -12,30 +11,15 @@ import (
 	"github.com/ErwinSalas/go-grpc-auth-svc/pkg/server"
 	"github.com/ErwinSalas/go-grpc-auth-svc/pkg/utils"
 	authpb "github.com/ErwinSalas/go-grpc-auth-svc/proto"
+	"github.com/ErwinSalas/go-grpc-tls/pkg/gogrpctls"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/reflection"
 )
-
-func loadTLSCredentials() (credentials.TransportCredentials, error) {
-	// Load server's certificate and private key
-	serverCert, err := tls.LoadX509KeyPair("cert/server-cert.pem", "cert/server-key.pem")
-	if err != nil {
-		return nil, err
-	}
-
-	// Create the credentials and return it
-	config := &tls.Config{
-		Certificates: []tls.Certificate{serverCert},
-		ClientAuth:   tls.NoClientCert,
-	}
-
-	return credentials.NewTLS(config), nil
-}
 
 func main() {
 	c, err := config.LoadConfig()
 
+	c.CertM = gogrpctls.NewCertManager()
 	if err != nil {
 		log.Fatalln("Failed at config", err)
 	}
@@ -56,7 +40,7 @@ func main() {
 
 	fmt.Println("Auth Svc on", c.Port)
 
-	tlsCredentials, err := loadTLSCredentials()
+	tlsCredentials, err := c.CertM.LoadServerCertificate()
 	if err != nil {
 		log.Fatal("cannot load TLS credentials: ", err)
 	}
