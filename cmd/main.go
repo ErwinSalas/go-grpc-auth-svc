@@ -11,7 +11,6 @@ import (
 	"github.com/ErwinSalas/go-grpc-auth-svc/pkg/server"
 	"github.com/ErwinSalas/go-grpc-auth-svc/pkg/utils"
 	authpb "github.com/ErwinSalas/go-grpc-auth-svc/proto"
-	"github.com/ErwinSalas/go-grpc-tls/pkg/gogrpctls"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/reflection"
@@ -20,7 +19,7 @@ import (
 func main() {
 	c, err := config.LoadConfig()
 
-	c.CertM = gogrpctls.NewCertManager()
+	// c.CertM = gogrpctls.NewCertManager()
 	if err != nil {
 		log.Fatalln("Failed at config", err)
 	}
