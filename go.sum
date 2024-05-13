@@ -1,6 +1,4 @@
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
-github.com/ErwinSalas/go-grpc-tls v0.0.4 h1:Sj7DMEgjxY6qbd2Mg2qbj9WWSd5CeahEIuDimtQat7c=
-github.com/ErwinSalas/go-grpc-tls v0.0.4/go.mod h1:YGj2ZladHhLNg4jNSNTS2aiNdXH4Rh7gMIZn7DBJv9E=
 github.com/ErwinSalas/go-grpc-tls v0.0.5 h1:YrgRwodKK6thlHfwv7ozm5p/H7Y3i2FhQFh3dYBHjdw=
 github.com/ErwinSalas/go-grpc-tls v0.0.5/go.mod h1:YGj2ZladHhLNg4jNSNTS2aiNdXH4Rh7gMIZn7DBJv9E=
 github.com/Masterminds/semver/v3 v3.1.1 h1:hLg3sBzpNErnxhQtUy/mmLR2I9foDujNK030IGemrRc=
@@ -25,6 +23,8 @@ github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.11.2 h1:Ji0DY1x
 github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.11.2/go.mod h1:5CsjAbs3NlGQyZNFACh+zztPDI7fU6eW9QsxjfnuBKg=
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.11.7 h1:ogRAwT1/gxJBcSWDMZlgyFUM962F51A5CRhDLbxLdmo=
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.11.7/go.mod h1:YCsIZhXfRPLFFCl5xxY+1T9RKzOKjCut+28JSX2DnAk=
+github.com/aws/aws-sdk-go-v2/service/servicediscovery v1.29.7 h1:ZfI2hM/iIDODkRWybKxz+QrUheQH+SPSaRA03oPqoxQ=
+github.com/aws/aws-sdk-go-v2/service/servicediscovery v1.29.7/go.mod h1:3pzLFJnbjkymz6RdZ963DuvMR9rzrKMXrlbteSk4Sxc=
 github.com/aws/aws-sdk-go-v2/service/sso v1.20.6 h1:o5cTaeunSpfXiLTIBx5xo2enQmiChtu1IBbzXnfU9Hs=
 github.com/aws/aws-sdk-go-v2/service/sso v1.20.6/go.mod h1:qGzynb/msuZIE8I75DVRCUXw3o3ZyBmUvMwQ2t/BrGM=
 github.com/aws/aws-sdk-go-v2/service/ssooidc v1.24.0 h1:Qe0r0lVURDDeBQJ4yP+BOrJkvkiCo/3FH/t+wY11dmw=

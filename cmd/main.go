@@ -13,6 +13,7 @@ import (
 	authpb "github.com/ErwinSalas/go-grpc-auth-svc/proto"
 	"github.com/ErwinSalas/go-grpc-tls/pkg/gogrpctls"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/reflection"
 )
 
@@ -40,12 +41,14 @@ func main() {
 
 	fmt.Println("Auth Svc on", c.Port)
 
-	tlsCredentials, err := c.CertM.LoadServerCertificate()
-	if err != nil {
-		log.Fatal("cannot load TLS credentials: ", err)
-	}
+	//tlsCredentials, err := c.CertM.LoadServerCertificate()
+	// if err != nil {
+	// 	log.Fatal("cannot load TLS credentials: ", err)
+	// }
 
-	grpcServer := grpc.NewServer(grpc.Creds(tlsCredentials))
+	noCreds := insecure.NewCredentials()
+
+	grpcServer := grpc.NewServer(grpc.Creds(noCreds))
 	authService := auth.NewAuthService(auth.NewUserRepository(h), jwt) // Puedes pasar una conexión de base de datos real aquí.
 	authpb.RegisterAuthServiceServer(grpcServer, server.NewAuthServer(authService))
 
