@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net"
+	"time"
 
 	"github.com/ErwinSalas/go-grpc-auth-svc/pkg/auth"
 	"github.com/ErwinSalas/go-grpc-auth-svc/pkg/config"
@@ -13,7 +14,10 @@ import (
 	authpb "github.com/ErwinSalas/go-grpc-auth-svc/proto"
 	"github.com/ErwinSalas/go-grpc-tls/pkg/gogrpctls"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/health"
 	"google.golang.org/grpc/reflection"
+
+	healthpb "google.golang.org/grpc/health/grpc_health_v1"
 )
 
 func main() {
@@ -49,6 +53,23 @@ func main() {
 	authService := auth.NewAuthService(auth.NewUserRepository(h), jwt) // Puedes pasar una conexión de base de datos real aquí.
 	authpb.RegisterAuthServiceServer(grpcServer, server.NewAuthServer(authService))
 
+	healthcheck := health.NewServer()
+	healthpb.RegisterHealthServer(grpcServer, healthcheck)
+
+	// Start health check routine
+	go func() {
+		for {
+			var count int64
+			if err := h.DB.Table("users").Count(&count).Error; err != nil {
+				log.Println("Database query error:", err)
+				healthcheck.SetServingStatus("", healthpb.HealthCheckResponse_NOT_SERVING)
+				return
+			} else {
+				healthcheck.SetServingStatus("", healthpb.HealthCheckResponse_SERVING)
+				time.Sleep(5 * time.Second)
+			}
+		}
+	}()
 	// Register reflection service on gRPC server.
 	reflection.Register(grpcServer)
 

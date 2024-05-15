@@ -61,7 +61,3 @@ func (s *AuthServer) Validate(ctx context.Context, req *authpb.ValidateRequest) 
 
 	return result, nil
 }
-
-func (s *AuthServer) HealthCheck(ctx context.Context, req *authpb.Empty) (*authpb.Empty, error) {
-	return &authpb.Empty{}, nil
-}

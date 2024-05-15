@@ -8,10 +8,8 @@ service AuthService {
   rpc Register(RegisterRequest) returns (RegisterResponse) {}
   rpc Login(LoginRequest) returns (LoginResponse) {}
   rpc Validate(ValidateRequest) returns (ValidateResponse) {}
-  rpc HealthCheck(Empty) returns (Empty) {}
 }
 
-message Empty {}
 // Register
 message RegisterRequest {
   string email = 1;
