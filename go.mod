@@ -6,7 +6,7 @@ replace github.com/ErwinSalas/go-grpc-auth-svc/proto => ./proto
 
 require (
 	github.com/ErwinSalas/go-grpc-auth-svc/proto v0.0.0-00010101000000-000000000000
-	github.com/ErwinSalas/go-grpc-tls v0.0.5
+	github.com/ErwinSalas/go-grpc-tls v0.0.6
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/spf13/viper v1.18.2
 	golang.org/x/crypto v0.19.0

@@ -3,6 +3,8 @@ github.com/ErwinSalas/go-grpc-tls v0.0.4 h1:Sj7DMEgjxY6qbd2Mg2qbj9WWSd5CeahEIuDi
 github.com/ErwinSalas/go-grpc-tls v0.0.4/go.mod h1:YGj2ZladHhLNg4jNSNTS2aiNdXH4Rh7gMIZn7DBJv9E=
 github.com/ErwinSalas/go-grpc-tls v0.0.5 h1:YrgRwodKK6thlHfwv7ozm5p/H7Y3i2FhQFh3dYBHjdw=
 github.com/ErwinSalas/go-grpc-tls v0.0.5/go.mod h1:YGj2ZladHhLNg4jNSNTS2aiNdXH4Rh7gMIZn7DBJv9E=
+github.com/ErwinSalas/go-grpc-tls v0.0.6 h1:BBo0Xy/g6LEQ/DDZEhYf5GSTDiuNW5L96uRqSK1H9/g=
+github.com/ErwinSalas/go-grpc-tls v0.0.6/go.mod h1:YGj2ZladHhLNg4jNSNTS2aiNdXH4Rh7gMIZn7DBJv9E=
 github.com/Masterminds/semver/v3 v3.1.1 h1:hLg3sBzpNErnxhQtUy/mmLR2I9foDujNK030IGemrRc=
 github.com/Masterminds/semver/v3 v3.1.1/go.mod h1:VPu/7SZ7ePZ3QOrcuXROw5FAcLl4a0cBrbBpGY/8hQs=
 github.com/aws/aws-sdk-go-v2 v1.26.1 h1:5554eUqIYVWpU0YmeeYZ0wU64H2VLBs8TlhRB2L+EkA=
