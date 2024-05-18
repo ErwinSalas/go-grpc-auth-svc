@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"log"
 	"net"
@@ -19,6 +20,14 @@ import (
 
 	healthpb "google.golang.org/grpc/health/grpc_health_v1"
 )
+
+func loggingInterceptor(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) {
+	log.Printf("Received request: %v", req)
+	log.Printf("Method: %s", info.FullMethod)
+
+	resp, err := handler(ctx, req)
+	return resp, err
+}
 
 func main() {
 	c, err := config.LoadConfig()
@@ -49,7 +58,7 @@ func main() {
 		log.Fatal("cannot load TLS credentials: ", err)
 	}
 
-	grpcServer := grpc.NewServer(grpc.Creds(tlsCredentials))
+	grpcServer := grpc.NewServer(grpc.Creds(tlsCredentials), grpc.UnaryInterceptor(loggingInterceptor))
 	authService := auth.NewAuthService(auth.NewUserRepository(h), jwt) // Puedes pasar una conexión de base de datos real aquí.
 	authpb.RegisterAuthServiceServer(grpcServer, server.NewAuthServer(authService))
 
