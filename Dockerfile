@@ -30,6 +30,12 @@ WORKDIR /root/
 COPY --from=builder /app-auth/main .
 COPY --from=builder /app-auth/.env .  
 
+# Install grpcurl
+RUN apk --no-cache add curl
+RUN wget -qO- https://github.com/fullstorydev/grpcurl/releases/download/v1.8.0/grpcurl_1.8.0_linux_x86_64.tar.gz | tar xvz && \
+    mv grpcurl_1.8.0_linux_x86_64/grpcurl /usr/local/bin/ && \
+    rm -rf grpcurl_1.8.0_linux_x86_64
+
 # Expose port 8080 to the outside world
 EXPOSE 50051
 
